@@ -9,13 +9,13 @@
 name: Build OpenWrt
 
 on:
-  release:
-    types: published
-  push:
-    branches:
-      - master
-    paths:
-      - '.config'
+#  release:
+#    types: published
+#  push:
+#    branches:
+#      - master
+#    paths:
+#     - '.config'
 #  schedule:
 #    - cron: 0 8 * * 5
   watch:
@@ -24,9 +24,9 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  CONFIG_FILE: .config
+  CONFIG_FILE: mir3gv1.config
   DIY_SH: diy.sh
-  SSH_ACTIONS: true
+  SSH_ACTIONS: false
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
