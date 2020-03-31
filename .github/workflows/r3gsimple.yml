@@ -14,8 +14,8 @@ on:
   push:
     branches:
       - master
-    paths:
-      - 'simple.config'
+#    paths:
+#      - 'simple.config'
 #  schedule:
 #    - cron: 0 8 * * 5
   watch:
