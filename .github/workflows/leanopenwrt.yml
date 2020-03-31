@@ -6,20 +6,20 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Build OpenWrt
+name: lean OpenWrt
 
 on:
-  release:
-    types: published
-  push:
-    branches:
-      - master
-    paths:
-     - 'mir3gv1.config'
+#  release:
+#    types: published
+#  push:
+#    branches:
+#      - master
+#    paths:
+#     - 'mir3gv1.config'
 #  schedule:
 #    - cron: 0 8 * * 5
-#  watch:
-#    types: started
+  watch:
+    types: started
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
@@ -111,7 +111,7 @@ jobs:
       uses: actions/upload-artifact@master
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_firmware
+        name: Lean_firmware
         path: ${{ env.FIRMWARE }}
 
     - name: Upload firmware to cowtransfer
