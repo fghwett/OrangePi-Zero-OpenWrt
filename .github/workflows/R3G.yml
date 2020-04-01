@@ -6,18 +6,18 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: Build OpenWrt
+name: Simplify OpenWrt
 
 on:
-#  release:
-#    types: published
-#  push:
-#    branches:
-#      - master
-#    paths:
-#      - '.config'
-#  schedule:
-#    - cron: 0 8 * * 5
+  #release:
+    #types: published
+  #push:
+    #branches:
+      #- master
+    #paths:
+      #- '.config'
+  #schedule:
+    #- cron: 30 20 * * *
   watch:
     types: started
 
@@ -111,7 +111,7 @@ jobs:
       uses: actions/upload-artifact@master
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: OpenWrt_firmware
+        name: Simplify_OpenWrt
         path: ${{ env.FIRMWARE }}
 
     - name: Upload firmware to cowtransfer
