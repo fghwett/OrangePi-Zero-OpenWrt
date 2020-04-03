@@ -9,6 +9,7 @@
 sed -i 's/192.168.1.1/192.168.0.2/g' package/base-files/files/bin/config_generate
 git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
 git clone https://github.com/Lienol/openwrt-package package/openwrt-package
+#mkdir package/lienol cp -r package/openwrt-package/package/luci-app-passwall package/lienol
 #git clone https://github.com/vernesong/OpenClash.git package/OpenClash.git
 #git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 #git clone https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
