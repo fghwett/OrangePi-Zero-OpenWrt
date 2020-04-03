@@ -15,7 +15,7 @@ git clone https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
 git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
 svn co https://github.com/pymumu/smartdns/trunk/package/openwrt smartdns
 #git clone https://github.com/project-openwrt/luci-app-unblockneteasemusic package/luci-app-unblockneteasemusic 
-#git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb.git
+git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb.git
 git clone https://github.com/jerrykuku/luci-app-vssr package/luci-app-vssr
 #git clone https://github.com/project-openwrt/openwrt package/openwrt
 git clone https://github.com/lisaac/luci-app-diskman package/luci-app-diskman
