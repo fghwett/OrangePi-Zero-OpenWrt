@@ -111,7 +111,7 @@ jobs:
       uses: actions/upload-artifact@master
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: Simplify_OpenWrt
+        name: OrangePi Zero OpenWrt
         path: ${{ env.FIRMWARE }}
 
     - name: Upload firmware to cowtransfer
