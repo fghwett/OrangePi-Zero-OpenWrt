@@ -27,7 +27,7 @@ env:
   CONFIG_FILE: OrangePi.config
   DIY_SH: diy.sh
   SSH_ACTIONS: false
-  UPLOAD_BIN_DIR: true
+  UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: true
   TZ: Asia/Shanghai
@@ -117,9 +117,9 @@ jobs:
     - name: Create release
       uses: ncipollo/release-action@v1
       with:
-        name: ${{ env.DATE }} 🚀 OrangePi Zero Lean版 | 自动编译
+        name: ${{ env.DATE }} 🚀 OrangePi | 自动编译
         allowUpdates: true
-        tag: OrangePi Zero Lean版
+        tag: OrangePi
         commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
