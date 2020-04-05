@@ -1,1 +1,1 @@
-cd openwrt && make menuconfig
+根据P3TERX的自动编译方法，每天早上自动编译最新的Lean的Openwrt固件，本固件编译为OrangePi Zero版本(非Plus版)，包含一些常用的固件，下载方式请看release，谢谢支持
