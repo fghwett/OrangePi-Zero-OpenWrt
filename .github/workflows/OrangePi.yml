@@ -27,7 +27,7 @@ env:
   CONFIG_FILE: OrangePi.config
   DIY_SH: diy.sh
   SSH_ACTIONS: false
-  UPLOAD_BIN_DIR: false
+  UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: true
   TZ: Asia/Shanghai
@@ -107,15 +107,31 @@ jobs:
         echo "::set-env name=FIRMWARE::$PWD"
         echo "::set-output name=status::success"
 
-    - name: Upload firmware directory
-      uses: actions/upload-artifact@master
-      if: steps.organize.outputs.status == 'success' && !cancelled()
+#    - name: Upload firmware directory
+#      uses: actions/upload-artifact@master
+#      if: steps.organize.outputs.status == 'success' && !cancelled()
+#      with:
+#        name: OrangePi Zero OpenWrt
+#        path: ${{ env.FIRMWARE }}
+
+    - name: Create release
+      uses: ncipollo/release-action@v1
       with:
-        name: OrangePi Zero OpenWrt
-        path: ${{ env.FIRMWARE }}
+        name: ${{ env.DATE }} 🚀 OrangePi Zero Lean版 | 自动编译
+        allowUpdates: true
+        tag: OrangePi Zero Lean版
+        commit: master
+        token: ${{ secrets.RELEASES_TOKEN }}
+        body: |
+          当前使用版本:（编译前的最后一次源码更新记录,源码来自https://github.com/coolsnowwolf/lede ）
+          ${{ env.useVersionInfo }}
+        artifacts: "${{ env.FIRMWARE }}/*,openwrt/bin"
 
     - name: Upload firmware to cowtransfer
       if: env.UPLOAD_COWTRANSFER == 'true' && !cancelled()
       run: |
         curl -sL https://git.io/cowtransfer | sh
         ./cowtransfer-uploader -s -p 8 ${FIRMWARE}
+        
+    - name: WeChat notification
+      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}发布成功-编译结束
