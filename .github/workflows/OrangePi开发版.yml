@@ -25,7 +25,7 @@ env:
   REPO_URL: https://github.com/Lienol/openwrt
   REPO_BRANCH: dev-master
   CONFIG_FILE: OrangePi开发版.config
-  DIY_SH: diy.sh
+  DIY_SH: OrangePi开发版.sh
   SSH_ACTIONS: true
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
