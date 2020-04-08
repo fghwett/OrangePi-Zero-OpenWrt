@@ -16,10 +16,10 @@ on:
       #- master
     #paths:
       #- '.config'
-#  schedule:
-#   - cron: 30 19 * * *
-  watch:
-    types: started
+  schedule:
+   - cron: 30 15 * * *
+#  watch:
+#    types: started
 
 env:
   REPO_URL: https://github.com/project-openwrt/openwrt
