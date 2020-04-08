@@ -31,7 +31,7 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
   TZ: Asia/Shanghai
-  FILE_NAME: OrangePi
+  FILE_NAME: OrangePi稳定版
 
 jobs:
   build:
@@ -40,7 +40,7 @@ jobs:
 
     steps:
     - name: WeChat notification
-      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}开始编译
+      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}现在开始编译，请于两个半小时再次接收消息
     
     - name: Checkout
       uses: actions/checkout@master
@@ -121,9 +121,9 @@ jobs:
     - name: Create release
       uses: ncipollo/release-action@v1
       with:
-        name: ${{ env.DATE }} 🚀 OrangePi | 自动编译
+        name: ${{ env.DATE }} 🚀 OrangePi稳定版 | 自动编译
         allowUpdates: true
-        tag: OrangePi
+        tag: OrangePi稳定版
         commit: master
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
@@ -138,4 +138,4 @@ jobs:
         ./cowtransfer-uploader -s -p 8 ${FIRMWARE}
         
     - name: WeChat notification
-      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}发布成功-编译结束
+      run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}现在已经发布成功-编译结束
