@@ -27,7 +27,7 @@ env:
   CONFIG_FILE: OrangePi开发版.config
   DIY_SH: OrangePi开发版.sh
   SSH_ACTIONS: false
-  UPLOAD_BIN_DIR: false
+  UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
   TZ: Asia/Shanghai
