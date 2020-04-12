@@ -18,15 +18,15 @@ on:
       #- '.config'
   schedule:
    - cron: 30 15 * * *
-  watch:
-    types: started
+#  watch:
+#    types: started
 
 env:
   REPO_URL: https://github.com/Lienol/openwrt
   REPO_BRANCH: dev-19.07
   CONFIG_FILE: OrangePi开发版.config
   DIY_SH: OrangePi开发版.sh
-  SSH_ACTIONS: true
+  SSH_ACTIONS: false
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
