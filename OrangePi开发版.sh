@@ -7,22 +7,17 @@
 #=================================================
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.0.2/g' package/base-files/files/bin/config_generate
-#git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
-#git clone https://github.com/Lienol/openwrt-package package/openwrt-package
-#mkdir package/lienol cp -r package/openwrt-package/package/luci-app-passwall package/lienol
-#git clone https://github.com/vernesong/OpenClash.git package/OpenClash.git
-#git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
-git clone https://github.com/melsem/openwrt-lede_xradio-xr819_soc-audio/blob/master/packages_xradio-OpenWrt-master/add-patch_dts_file-wifi-xradio.patch package/add-patch_dts_file-wifi-xradio.patch
-#git clone https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
-#git clone https://github.com/xtaci/kcptun.git package/kcptun.git
-#git clone https://github.com/lisaac/luci-app-dockerman package/luci-app-dockerman
-#svn co https://github.com/pymumu/smartdns/trunk/package/openwrt smartdns
-#git clone https://github.com/project-openwrt/luci-app-unblockneteasemusic package/luci-app-unblockneteasemusic 
+git clone https://github.com/destan19/OpenAppFilter package/OpenAppFilter
+git clone https://github.com/vernesong/OpenClash.git package/OpenClash.git
+git clone https://github.com/rufengsuixing/luci-app-adguardhome package/luci-app-adguardhome
 git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb.git
 git clone https://github.com/jerrykuku/luci-app-vssr package/luci-app-vssr
+git clone https://github.com/ElonH/Rclone-OpenWrt package/rclone
+git clone https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+git clone https://github.com/pymumu/luci-app-smartdns package/luci-app-smartdns
+git clone https://github.com/pymumu/openwrt-smartdns package/openwrt-smartdns
+git clone https://github.com/tzxiaozhen88/koolproxyR package/koolproxyR
+git clone https://github.com/schen39/luci-app-serverchan package/luci-app-serverchan
 #git clone https://github.com/project-openwrt/openwrt package/openwrt
-#git clone https://github.com/lisaac/luci-app-diskman package/luci-app-diskman
-#mkdir -p package/parted && cp -i package/luci-app-diskman/Parted.Makefile package/parted/Makefile
-#git clone https://github.com/melsem/openwrt-lede_xradio-xr819_soc-audio/blob/master/packages_xradio-OpenWrt(Lede)-18.06.xx/add-patch_dts_file-wifi-xradio.patch package/add-patch_dts_file-wifi-xradio.patch
 ./scripts/feeds update -a
 ./scripts/feeds install -a
