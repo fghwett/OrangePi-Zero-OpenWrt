@@ -26,10 +26,10 @@ env:
   REPO_BRANCH: dev-19.07
   CONFIG_FILE: OrangePi开发版.config
   DIY_SH: OrangePi开发版.sh
-  SSH_ACTIONS: false
-  UPLOAD_BIN_DIR: true
+  SSH_ACTIONS: true
+  UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
-  UPLOAD_COWTRANSFER: false
+  UPLOAD_COWTRANSFER: true
   TZ: Asia/Shanghai
   FILE_NAME: OrangePi开发版
 
